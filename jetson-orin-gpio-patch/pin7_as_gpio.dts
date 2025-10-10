@@ -3,7 +3,7 @@
 
 / {
     jetson-header-name = "Jetson 40pin Header";
-    overlay-name = "Pin 7 gpio bidirectional";
+    overlay-name = "Pin 7,12,15,35,38,40";
     compatible = "nvidia,p3768-0000+p3767-0000\0nvidia,p3768-0000+p3767-0001\0nvidia,p3768-0000+p3767-0003\0nvidia,p3768-0000+p3767-0004\0nvidia,p3768-0000+p3767-0005\0nvidia,p3768-0000+p3767-0000-super\0nvidia,p3768-0000+p3767-0001-super\0nvidia,p3768-0000+p3767-0003-super\0nvidia,p3768-0000+p3767-0004-super\0nvidia,p3768-0000+p3767-0005-super\0nvidia,p3509-0000+p3767-0000\0nvidia,p3509-0000+p3767-0001\0nvidia,p3509-0000+p3767-0003\0nvidia,p3509-0000+p3767-0004\0nvidia,p3509-0000+p3767-0005";
 
 
@@ -21,12 +21,17 @@
 		        nvidia,enable-input = <0x1>;
 		        nvidia,pull = <0x0>;
 		    };
-            
             hdr40-pin12 {
                 nvidia,pins = "soc_gpio41_ph7";
                 nvidia,tristate = <0x0>;
                 nvidia,enable-input = <0x1>;
                 nvidia,pull = <0x0>;
+            };
+            hdr40-pin15 {
+                nvidia,pins = "soc_gpio39_pn1";
+                nvidia,tristate = <0x0>;
+		        nvidia,enable-input = <0x1>;
+		        nvidia,pull = <0x0>;
             };
             hdr40-pin35 {
                 nvidia,pins = "soc_gpio44_pi2";
