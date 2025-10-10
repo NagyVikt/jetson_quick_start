@@ -13,7 +13,15 @@ Utility scripts and configuration tweaks from the JetsonHacks project (https://g
 
 ## Highlights
 - **VS Code on Jetson**: Run `installVSCode/installVSCode.sh` for a plain install, or `installVSCode/installVSCodeWithPython.sh` to add Python developer tooling automatically. Both scripts fetch the official Microsoft arm64 build.
-- **GPIO fix for JetPack 6.2**: Use the overlay in `jetson-orin-gpio-patch/pin7_as_gpio.dts` to make Jetson Orin Pin 7 bidirectional, and apply `jetson-orin-gpio-patch/pinctrl-tegra-sfsel.patch` via `patch-for-pinctrl-sfsel.sh` if you also need the kernel driver fix.
+- **GPIO fix for JetPack 6.2**: Use the overlay in `jetson-orin-gpio-patch/pin7_as_gpio.dts` to make Jetson Orin Pin 7 bidirectional, or compile `jetson-orin-gpio-patch/pins_as_gpio.dts` to enable multiple pins at once. Apply `jetson-orin-gpio-patch/pinctrl-tegra-sfsel.patch` via `patch-for-pinctrl-sfsel.sh` if you also need the kernel driver fix.
+
+To build and deploy the multi-pin overlay:
+```bash
+cd jetson-orin-gpio-patch
+dtc -O dtb -o pins_as_gpio.dtbo pins_as_gpio.dts
+sudo cp pins_as_gpio.dtbo /boot
+sudo /opt/nvidia/jetson-io/jetson-io.py
+```
 
 ## Requirements
 - NVIDIA Jetson hardware running Ubuntu for Jetson (JetPack). The GPIO patch currently targets JetPack 6.2 on kernel 5.15.
