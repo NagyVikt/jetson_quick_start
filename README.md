@@ -1,10 +1,10 @@
 # Jetson Quick Start
 
-Utility scripts and configuration tweaks to get NVIDIA Jetson developer kits up and running without wading through long setup guides. Each directory is self-contained; dip into the tooling you need and follow the detailed notes provided inside.
+Utility scripts and configuration tweaks from the JetsonHacks project (https://github.com/jetsonhacks) to get NVIDIA Jetson developer kits up and running without wading through long setup guides. Each directory is self-contained; dip into the tooling you need and follow the detailed notes provided inside.
 
 ## Repository layout
-- `installVSCode/` — Shell scripts for installing Visual Studio Code on arm64 Ubuntu, plus an option that also provisions Python tooling (pip, pylint, black, VS Code Python extension).
-- `jetson-orin-gpio-patch/` — Device tree overlay, kernel patch, and examples that fix GPIO direction handling on JetPack 6.2 for Jetson Orin-based kits.
+- `installVSCode/` — Shell scripts for installing Visual Studio Code on arm64 Ubuntu, plus an option that also provisions Python tooling (pip, pylint, black, VS Code Python extension). Original repository: https://github.com/jetsonhacks/installVSCode
+- `jetson-orin-gpio-patch/` — Device tree overlay, kernel patch, and examples that fix GPIO direction handling on JetPack 6.2 for Jetson Orin-based kits. Original repository: https://github.com/jetsonhacks/jetson-orin-gpio-patch
 
 ## Quick start
 1. Clone or download this repository on the Jetson you are configuring.
