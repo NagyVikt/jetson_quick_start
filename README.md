@@ -13,7 +13,7 @@ Utility scripts and configuration tweaks from the JetsonHacks project (https://g
 
 ## Highlights
 - **VS Code on Jetson**: Run `installVSCode/installVSCode.sh` for a plain install, or `installVSCode/installVSCodeWithPython.sh` to add Python developer tooling automatically. Both scripts fetch the official Microsoft arm64 build.
-- **GPIO fix for JetPack 6.2**: Use the overlay in `jetson-orin-gpio-patch/pin7_as_gpio.dts` to make Jetson Orin Pin 7 bidirectional, or compile `jetson-orin-gpio-patch/pins_as_gpio.dts` to enable multiple pins at once. Apply `jetson-orin-gpio-patch/pinctrl-tegra-sfsel.patch` via `patch-for-pinctrl-sfsel.sh` if you also need the kernel driver fix.
+- **GPIO fixes for JetPack 6.2**: Compile `jetson-orin-gpio-patch/pin7_as_gpio.dts` when you only need Pin 7 (GPIO9) bidirectional, or `jetson-orin-gpio-patch/pins_as_gpio.dts` when you want multiple pins unlocked together. If kernel-level handling needs the sfsel state preserved, apply `jetson-orin-gpio-patch/pinctrl-tegra-sfsel.patch` using `patch-for-pinctrl-sfsel.sh`.
 
 To build and deploy the multi-pin overlay:
 ```bash
